@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Palette Saver</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="panel-header">
+    <div class="brand">
+      <span class="logo-dot"></span>
+      <h1 class="app-title">Palette Saver</h1>
+    </div>
+    <button id="close-panel" type="button" class="close-btn" title="Close Panel" aria-label="Close panel">&times;</button>
+  </header>
+
+  <main>
+    <button id="pick" class="primary">Pick a color from the screen</button>
+
+    <form id="manual" class="manual" autocomplete="off">
+      <input id="hex" placeholder="Type hex (#FF6F95) or name" maxlength="30" aria-label="Hex code or name">
+      <button type="submit">Add</button>
+    </form>
+
+    <section class="palette-bar">
+      <select id="palettes" aria-label="Palette"></select>
+      <button id="new" type="button">New</button>
+      <button id="del" type="button">Delete</button>
+    </section>
+    
+    <div class="control-row">
+      <input id="pname" class="pname" maxlength="30" aria-label="Palette name" spellcheck="false">
+      <input id="search" class="search-input" placeholder="🔍 Filter colors..." aria-label="Search colors">
+    </div>
+
+    <div id="dropzone" class="dropzone" title="Drop an image here to extract colors">
+      <span>Drop image here to extract colors</span>
+      <input type="file" id="image-file" accept="image/*" hidden>
+    </div>
+
+    <p id="empty" class="empty" hidden>No colors yet. Pick one, type a hex, or drop an image!</p>
+    <div id="grid" class="grid"></div>
+
+    <section class="export-section">
+      <div class="export-group">
+        <button id="copy-css" type="button">CSS</button>
+        <button id="copy-tailwind" type="button">Tailwind</button>
+        <button id="copy-scss" type="button">SCSS</button>
+        <button id="copy-json" type="button">JSON</button>
+      </div>
+    </section>
+
+    <section class="themes-wrap">
+      <span class="lbl">Theme</span>
+      <div id="themes" class="themes"></div>
+    </section>
+
+    <p class="hint">Click color to copy hex. Click name to edit.</p>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  </main>
+
+  <script src="util.js"></script>
+  <script src="sidepanel.js"></script>
+</body>
+</html>

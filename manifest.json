@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "Palette Saver",
+  "version": "1.1.0",
+  "description": "Pick any color on your screen, name your colors, check WCAG contrast, and export palettes easily.",
+  "minimum_chrome_version": "114",
+  "permissions": ["storage", "sidePanel"],
+  "background": { "service_worker": "background.js" },
+  "side_panel": { "default_path": "sidepanel.html" },
+  "action": {
+    "default_title": "Open Palette Saver",
+    "default_icon": { "16": "icons/icon16.png", "48": "icons/icon48.png", "128": "icons/icon128.png" }
+  },
+  "icons": { "16": "icons/icon16.png", "48": "icons/icon48.png", "128": "icons/icon128.png" }
+}
